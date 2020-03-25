@@ -1,0 +1,63 @@
+QuorumTransactionWatcherJob:
+  Blockchain:
+    TransactionNodeUrlList:
+      settings-key: QuorumTransactionWatcherJob-TransactionNodeUrlList
+      types:
+          - JsonArray
+    BatchSize:
+      settings-key: QuorumTransactionWatcherJob-BatchSize
+      types:
+        - Optional
+    IdleTime:
+      settings-key: QuorumTransactionWatcherJob-IdleTime
+      types:
+        - Optional
+    WebSocketsConnectionTimeOut:
+      settings-key: QuorumTransactionWatcherJob-WebSocketsConnectionTimeOut
+      types:
+        - Optional
+    WarningScanGapInBlocks:
+      settings-key: QuorumTransactionWatcherJob-WarningScanGapInBlocks
+    ErrorScanGapInBlocks:
+      settings-key: QuorumTransactionWatcherJob-ErrorScanGapInBlocks
+    ContractAddresses:
+      CustomerRegistry:
+        settings-key: PrivateBlockchain-CustomerRegistryContractAddress
+      PartnersPayments:
+        settings-key: PrivateBlockchain-PartnersPaymentsContractAddress
+      PaymentTransfers:
+        settings-key: PrivateBlockchain-PaymentTransfersContractAddress
+      RoleRegistry:
+        settings-key: PrivateBlockchain-RoleRegistryContractAddress
+      Token:
+        settings-key: PrivateBlockchain-TokenContractAddress
+      Gateway:
+        settings-key: PrivateBlockchainGatewayContractAddress
+      MVNVouchersPayments:
+        settings-key: PrivateBlockchain-MVNVouchersPaymentsContractAddress
+
+  Db:
+    DataConnString:
+      settings-key: QuorumTransactionWatcherJob-DataConnString
+    LogsConnString:
+      settings-key: QuorumTransactionWatcherJob-LogsConnString
+      types:
+        - AzureTableStorage
+  Publisher:
+    ConnectionString:
+      settings-key: PrivateBlockchainRabbitMQ
+      types:
+        - RabbitMq
+ 
+SlackNotifications:
+    AzureQueue:
+        ConnectionString:
+            settings-key: SlackNotificationsConnString
+            types:
+                - AzureTableStorage
+        QueueName:
+            settings-key: SlackQueueName
+
+MonitoringServiceClient:
+    MonitoringServiceUrl:
+        settings-key: MonitoringServiceUrl
