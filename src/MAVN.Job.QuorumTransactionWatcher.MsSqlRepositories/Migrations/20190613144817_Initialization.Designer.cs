@@ -21,7 +21,7 @@ namespace MAVN.Job.QuorumTransactionWatcher.MsSqlRepositories.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Lykke.Job.QuorumTransactionWatcher.MsSqlRepositories.Entities.BlockIndexationStateEntity", b =>
+            modelBuilder.Entity("MAVN.Job.QuorumTransactionWatcher.MsSqlRepositories.Entities.BlockIndexationStateEntity", b =>
                 {
                     b.Property<long>("BlockNumber")
                         .HasColumnName("block_number");
