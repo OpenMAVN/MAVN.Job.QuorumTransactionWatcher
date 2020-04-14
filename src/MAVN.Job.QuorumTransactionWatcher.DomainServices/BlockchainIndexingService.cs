@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +9,7 @@ using MAVN.Job.QuorumTransactionWatcher.Domain.Repositories;
 using MAVN.Job.QuorumTransactionWatcher.Domain.Services;
 using Falcon.Numerics;
 using MAVN.Job.QuorumTransactionWatcher.Domain;
-using Lykke.PrivateBlockchain.Definitions;
+using MAVN.PrivateBlockchain.Definitions;
 using Lykke.RabbitMqBroker.Publisher;
 using Nethereum.Contracts;
 using Nethereum.JsonRpc.Client;
