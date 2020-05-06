@@ -7,7 +7,7 @@ using Lykke.Common.Log;
 using MAVN.Job.QuorumTransactionWatcher.Contract;
 using MAVN.Job.QuorumTransactionWatcher.Domain.Repositories;
 using MAVN.Job.QuorumTransactionWatcher.Domain.Services;
-using Falcon.Numerics;
+using MAVN.Numerics;
 using MAVN.Job.QuorumTransactionWatcher.Domain;
 using MAVN.PrivateBlockchain.Definitions;
 using Lykke.RabbitMqBroker.Publisher;
