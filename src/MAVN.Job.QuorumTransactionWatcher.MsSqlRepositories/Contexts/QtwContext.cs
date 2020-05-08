@@ -1,6 +1,6 @@
 using System.Data.Common;
 using JetBrains.Annotations;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Job.QuorumTransactionWatcher.MsSqlRepositories.Entities;
 using Microsoft.EntityFrameworkCore;
 

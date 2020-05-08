@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Job.QuorumTransactionWatcher.Domain.Repositories;
 using MAVN.Job.QuorumTransactionWatcher.MsSqlRepositories.Constants;
 using MAVN.Job.QuorumTransactionWatcher.MsSqlRepositories.Contexts;
