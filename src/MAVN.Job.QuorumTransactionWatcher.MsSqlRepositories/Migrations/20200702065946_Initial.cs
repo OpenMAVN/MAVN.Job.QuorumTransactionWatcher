@@ -1,9 +1,8 @@
-// ReSharper disable All
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MAVN.Job.QuorumTransactionWatcher.MsSqlRepositories.Migrations
 {
-    public partial class Initialization : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,23 +10,23 @@ namespace MAVN.Job.QuorumTransactionWatcher.MsSqlRepositories.Migrations
                 name: "quorum_transaction_watcher");
 
             migrationBuilder.CreateTable(
-                name: "block_indexation_states",
+                name: "blocks_data",
                 schema: "quorum_transaction_watcher",
                 columns: table => new
                 {
-                    blocknumber = table.Column<long>(name: "block_number", nullable: false),
-                    blockhash = table.Column<string>(name: "block_hash", type: "varchar(66)", nullable: false)
+                    key = table.Column<string>(nullable: false),
+                    value = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_block_indexation_states", x => x.blocknumber);
+                    table.PrimaryKey("PK_blocks_data", x => x.key);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "block_indexation_states",
+                name: "blocks_data",
                 schema: "quorum_transaction_watcher");
         }
     }

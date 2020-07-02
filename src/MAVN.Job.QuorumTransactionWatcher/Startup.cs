@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using MAVN.Job.QuorumTransactionWatcher.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +22,6 @@ namespace MAVN.Job.QuorumTransactionWatcher
             return services.BuildServiceProvider<AppSettings>(options =>
             {
                 options.SwaggerOptions = _swaggerOptions;
-
                 options.Logs = logs =>
                 {
                     logs.AzureTableName = "QuorumTransactionWatcherJobLog";
