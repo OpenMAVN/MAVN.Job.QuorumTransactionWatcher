@@ -1,19 +1,19 @@
-using System.Threading.Tasks;
-using MAVN.Common.MsSql;
+﻿using System.Threading.Tasks;
 using MAVN.Job.QuorumTransactionWatcher.Domain.Repositories;
 using MAVN.Job.QuorumTransactionWatcher.MsSqlRepositories.Constants;
 using MAVN.Job.QuorumTransactionWatcher.MsSqlRepositories.Contexts;
 using MAVN.Job.QuorumTransactionWatcher.MsSqlRepositories.Entities;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using Microsoft.EntityFrameworkCore;
 
 namespace MAVN.Job.QuorumTransactionWatcher.MsSqlRepositories
 {
     public class IndexingStateRepository : IIndexingStateRepository
     {
-        private readonly MsSqlContextFactory<QtwContext> _contextFactory;
+        private readonly PostgreSQLContextFactory<QtwContext> _contextFactory;
 
         public IndexingStateRepository(
-            MsSqlContextFactory<QtwContext> contextFactory)
+            PostgreSQLContextFactory<QtwContext> contextFactory)
         {
             _contextFactory = contextFactory;
         }

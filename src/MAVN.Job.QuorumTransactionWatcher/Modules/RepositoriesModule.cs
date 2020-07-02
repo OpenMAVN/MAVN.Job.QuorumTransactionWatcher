@@ -1,12 +1,12 @@
-using Autofac;
+﻿using Autofac;
 using JetBrains.Annotations;
-using MAVN.Common.MsSql;
 using MAVN.Job.QuorumTransactionWatcher.Domain.Repositories;
 using MAVN.Job.QuorumTransactionWatcher.MsSqlRepositories;
 using MAVN.Job.QuorumTransactionWatcher.MsSqlRepositories.Contexts;
 using MAVN.Job.QuorumTransactionWatcher.Settings;
 using MAVN.Job.QuorumTransactionWatcher.Settings.Job.Db;
 using Lykke.SettingsReader;
+using MAVN.Persistence.PostgreSQL.Legacy;
 
 namespace MAVN.Job.QuorumTransactionWatcher.Modules
 {
@@ -24,7 +24,7 @@ namespace MAVN.Job.QuorumTransactionWatcher.Modules
         protected override void Load(
             ContainerBuilder builder)
         {
-            builder.RegisterMsSql(
+            builder.RegisterPostgreSQL(
                 _dbSettings.DataConnString,
                 connString => new QtwContext(connString, false),
                 dbConn => new QtwContext(dbConn));
@@ -32,7 +32,7 @@ namespace MAVN.Job.QuorumTransactionWatcher.Modules
             builder
                 .Register(ctx => new IndexingStateRepository
                 (
-                    ctx.Resolve<MsSqlContextFactory<QtwContext>>()
+                    ctx.Resolve<PostgreSQLContextFactory<QtwContext>>()
                 ))
                 .As<IIndexingStateRepository>()
                 .SingleInstance();
